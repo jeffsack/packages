@@ -123,8 +123,31 @@ var PDFJS = {
     "InvalidPDFException": function () {},
     "MissingPDFException": function () {},
     "UnexpectedResponseException": function () {},
-    "Util": function () {},
-    "PageViewport": function () {},
+    "Util": {
+        "makeCssRgb": function () {},
+        "transform": function () {},
+        "applyTransform": function () {},
+        "applyInverseTransform": function () {},
+        "getAxialAlignedBoundingBox": function () {},
+        "inverseTransform": function () {},
+        "apply3dTransform": function () {},
+        "singularValueDecompose2dScale": function () {},
+        "normalizeRect": function () {},
+        "intersect": function () {},
+        "sign": function () {},
+        "appendToArray": function () {},
+        "prependToArray": function () {},
+        "extendObj": function () {},
+        "getInheritableProperty": function () {},
+        "inherit": function () {},
+        "loadScript": function () {}
+    },
+    "PageViewport": {
+        "clone": function () {},
+        "convertToViewportPoint": function () {},
+        "convertToViewportRectangle": function () {},
+        "convertToPdfPoint": function () {}
+    },
     "createPromiseCapability": function () {},
     "createBlob": function () {},
     "createObjectURL": function () {},
@@ -162,5 +185,31 @@ var PDFJS = {
         "update": function () {},
         "draw": function () {}
     },
-    "DefaultTextLayerFactory": {}
+    "DefaultTextLayerFactory": {},
+    "renderTextLayer": function () {},
+    "PDFPageProxy": {
+        "pageNumber": {},
+        "getViewport": function () {},
+        "getAnnotations": function () {},
+        "render": function () {},
+        "getOperatorList": function () {},
+        "getTextContent": function () {},
+        "cleanup": function () {}
+    },
+    "PDFDocumentProxy": {
+        "numPages": {},
+        "getPage": function () {},
+        "getPageIndex": function () {},
+        "getDestinations": function () {},
+        "getDestination": function () {},
+        "getAttachments": function () {},
+        "getJavaScript": function () {},
+        "getOutline": function () {},
+        "getMetadata": function () {},
+        "getData": function () {},
+        "getDownloadInfo": function () {},
+        "getStats": function () {},
+        "cleanup": function () {},
+        "destroy": function () {}
+    }
 };
