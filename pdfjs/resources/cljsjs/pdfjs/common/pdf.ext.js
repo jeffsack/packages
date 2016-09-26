@@ -181,6 +181,9 @@ var PDFJS = {
     },
     "SVGGraphics": function () {},
     "PDFPageView": {
+        "id": {},
+        "div": {},
+        "textLayer": {},
         "setPdfPage": function () {},
         "update": function () {},
         "draw": function () {}
@@ -211,5 +214,24 @@ var PDFJS = {
         "getStats": function () {},
         "cleanup": function () {},
         "destroy": function () {}
+    },
+    "PDFFindController": {
+        "executeCommand": function () {}
+    },
+    "PDFViewer": {
+        "_getVisiblePages": function () {},
+        "getPageView": function () {},
+        "setFindController": function () {},
+        "currentScaleValue": {},
+        "currentPageNumber": {},
+        "setDocument": function () {}
+    },
+    "TextLayerBuilder": {
+        "textLayerDiv": {},
+        "pageIndex": {},
+        "viewport": {},
+        "enhanceTextSelection": {},
     }
 };
+
+

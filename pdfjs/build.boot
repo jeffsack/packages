@@ -4,7 +4,7 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer [download]])
 
-(def +lib-version+ "1.4.20")
+(def +lib-version+ "1.5.417")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -17,13 +17,10 @@
 
 (deftask package []
   (comp
-    (download :url (format "https://github.com/mozilla/pdf.js/releases/download/v%s/pdfjs-%s-dist.zip" +lib-version+ +lib-version+)
-              :checksum "DDEA491E0CC2BB872589297D1AD1177A"
-              :unzip true)
-    (sift :move {#"^build/pdf\.js$"         "cljsjs/pdfjs/common/pdf.inc.js"
-                 #"^build/pdf\.worker\.js$" "cljsjs/pdfjs/common/pdf.worker.inc.js"
-                 #"^web/viewer\.css$"       "cljsjs/pdfjs/common/viewer.css"
-                 #"^web/(.*)\.js"           "cljsjs/pdfjs/common/$1.inc.js"
-                 #"^web/locale/"            "cljsjs/pdfjs/common/locale/"
-                 #"^web/images/"            "cljsjs/pdfjs/common/images/"})
+    (download :url "http://localhost:8888/build/pdf.js")
+    (download :url "http://localhost:8888/build/pdf.worker.js")
+    (download :url "http://localhost:8888/build/components/pdf_viewer.js")
+    (sift :move {#"^pdf\.js$"         "cljsjs/pdfjs/common/pdf.js"
+                 #"^pdf\.worker\.js$" "cljsjs/pdfjs/common/pdf.worker.js"
+                 #"^pdf_viewer\.js$"  "cljsjs/pdfjs/common/pdf_viewer.js"})
     (sift :include #{#"^cljsjs/" #"^deps\.cljs$"})))
